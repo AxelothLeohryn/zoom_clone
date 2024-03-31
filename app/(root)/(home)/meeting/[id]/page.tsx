@@ -16,13 +16,13 @@ const Meeting = ({ params }: { params: { id: string } }) => {
   if (!isLoaded || isCallLoading) return <Loader />;
 
   return (
-    <main className="h-screen w-full">
+    <div className="w-full">
       <StreamCall call={call}>
         <StreamTheme>
           {!isSetupComplete ? <MeetingSetup setIsSetupComplete={setIsSetupComplete}/> : <MeetingRoom />}
         </StreamTheme>
       </StreamCall>
-    </main>
+    </div>
   );
 };
 

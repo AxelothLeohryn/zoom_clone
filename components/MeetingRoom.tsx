@@ -31,7 +31,7 @@ const MeetingRoom = () => {
   //The double exclamation mark (!!) is a way to convert any data type to a boolean.
   //It is a shorthand way of converting any data type to a boolean.
   const isPersonalRoom = !!searchParams.get("personal")
-  const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
+  const [layout, setLayout] = useState<CallLayoutType>("grid");
   const [showParticipants, setShowParticipants] = useState(false);
   const {useCallCallingState} = useCallStateHooks();
   const callingState = useCallCallingState();
@@ -41,18 +41,18 @@ const MeetingRoom = () => {
 
   const CallLayout = () => {
     switch (layout) {
-      case "grid":
-        return <PaginatedGridLayout />;
+      case "speaker-right":
+        return <SpeakerLayout participantsBarPosition="right" />;
       case "speaker-left":
         return <SpeakerLayout participantsBarPosition="left" />;
 
       default:
-        return <SpeakerLayout participantsBarPosition="right" />;
+        return <PaginatedGridLayout />;
     }
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden pt-4 text-white">
+    <section className="relative w-full overflow-hiddenpt-4 text-white">
       <div className="relative flex size-full items-center justify-center">
         <div className="flex size-full max-w-[1000px] items-center">
           <CallLayout />
@@ -65,7 +65,7 @@ const MeetingRoom = () => {
           <CallParticipantsList onClose={() => setShowParticipants(false)} />
         </div>
       </div>
-      <div className="fixed bottom-0 flex w-full items-center justify-center gap-5 flex-wrap">
+      <div className="fixed bottom-4 md:bottom-0 lg:w-10/12 flex items-center justify-center gap-2 flex-wrap">
         <CallControls onLeave={() => router.push("/")}/>
 
         <DropdownMenu>

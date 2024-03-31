@@ -11,7 +11,7 @@ const Sidebar = () => {
   const pathname = usePathname();
 
   return (
-    <section className="sticky left-0 top-0 flex h-screen w-fit flex-col justify-betwen bg-dark-1 p-6 pt-28 text-white max-sm:hidden lg:w-[264px]">
+    <section className="sticky left-0 top-0 flex h-screen w-fit flex-col justify-betwen bg-dark-2 p-6 pt-28 text-white max-sm:hidden lg:w-[264px]">
       <div className="flex flex-1 flex-col gap-6">
         {sidebarLinks.map((link) => {
           const isActive =
@@ -24,7 +24,7 @@ const Sidebar = () => {
               className={cn(
                 "flex gap-4 items-center p-4 rounded-lg justify-start",
                 {
-                  "bg-blue-1": isActive,
+                  "bg-green-1": isActive,
                 }
               )}
             >

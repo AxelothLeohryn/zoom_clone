@@ -9,6 +9,11 @@
 }
 
 /* ======== stream css overrides ======== */
+.str-video {
+  --str-video__primary-color: #3ad305 !important;
+  --str-video__button-primary-base: #24272c !important;
+}
+
 .str-video__call-stats {
   max-width: 500px;
   position: relative;

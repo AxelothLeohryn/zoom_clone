@@ -20,13 +20,13 @@ const config = {
     extend: {
       colors: {
         dark: {
-          1: '#1C1F2E',
-          2: '#161925',
-          3: '#252A41',
-          4: '#1E2757',
+          1: '#0b0e0f',
+          2: '#191b1f',
+          3: '#24272c',
+          4: '#373c3f',
         },
         blue: {
-          1: '#0E78F9',
+          1: '#05a1d3',
         },
         sky: {
           1: '#C9DDFF',
@@ -34,14 +34,17 @@ const config = {
           3: '#F5FCFF',
         },
         orange: {
-          1: '#FF742E',
+          1: '#d33705',
         },
         purple: {
-          1: '#830EF9',
+          1: '#9E05D3',
         },
         yellow: {
           1: '#F9A90E',
         },
+        green: {
+          1: "#3ad305"
+        }
       },
       keyframes: {
         'accordion-down': {
