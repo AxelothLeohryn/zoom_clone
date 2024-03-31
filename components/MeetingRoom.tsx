@@ -31,7 +31,7 @@ const MeetingRoom = () => {
   //The double exclamation mark (!!) is a way to convert any data type to a boolean.
   //It is a shorthand way of converting any data type to a boolean.
   const isPersonalRoom = !!searchParams.get("personal")
-  const [layout, setLayout] = useState<CallLayoutType>("grid");
+  const [layout, setLayout] = useState<CallLayoutType>("speaker-right");
   const [showParticipants, setShowParticipants] = useState(false);
   const {useCallCallingState} = useCallStateHooks();
   const callingState = useCallCallingState();
