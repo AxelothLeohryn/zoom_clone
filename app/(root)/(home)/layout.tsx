@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <main className="relative">
+    <div className="relative">
       <Navbar />
       <div className="flex">
         <Sidebar />
@@ -21,7 +21,7 @@ const HomeLayout = ({ children }: { children: ReactNode }) => {
           <div className="w-full ">{children}</div>
         </section>
       </div>
-    </main>
+    </div>
   );
 };
 
