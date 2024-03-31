@@ -60,7 +60,7 @@ const PersonalRoom = () => {
       </div>
 
       <div className="flex gap-5">
-        <Button className="bg-blue-1" onClick={startRoom}>
+        <Button className="bg-green-1" onClick={startRoom}>
           Start Meeting
         </Button>
         <Button
