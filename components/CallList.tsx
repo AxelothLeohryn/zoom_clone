@@ -16,9 +16,6 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
   const [recordings, setRecordings] = useState<CallRecording[]>([]);
   const { toast } = useToast();
 
-
-  // hello asri
-
   const getCalls = () => {
     switch (type) {
       case "ended":
