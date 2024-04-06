@@ -49,9 +49,6 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
           callRecordings?.map((meeting) => meeting.queryRecordings()) ?? []
         );
 
-        // Explanation of flatMap
-        // The flatMap() method first maps each element using a mapping function, then flattens the result into a new array. It is identical to a map() followed by a flat() of depth 1, but flatMap() is often quite useful, as merging both into one method is slightly more efficient.
-
         const recordings = callData
           .filter((call) => call.recordings.length > 0)
           .flatMap((call) => call.recordings);

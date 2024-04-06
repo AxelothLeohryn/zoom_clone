@@ -27,17 +27,19 @@ type CallLayoutType = "grid" | "speaker-left" | "speaker-right";
 
 const MeetingRoom = () => {
   const searchParams = useSearchParams();
-  //Explanation of !! in the next line: 
+  //Explanation of !! in the next line:
   //The double exclamation mark (!!) is a way to convert any data type to a boolean.
   //It is a shorthand way of converting any data type to a boolean.
-  const isPersonalRoom = !!searchParams.get("personal")
+  const isPersonalRoom = !!searchParams.get("personal");
   const [layout, setLayout] = useState<CallLayoutType>("speaker-right");
   const [showParticipants, setShowParticipants] = useState(false);
-  const {useCallCallingState} = useCallStateHooks();
+  const { useCallCallingState } = useCallStateHooks();
   const callingState = useCallCallingState();
   const router = useRouter();
 
-  if(callingState !== CallingState.JOINED) return <Loader />
+  if (callingState !== CallingState.JOINED) return <Loader />;
+
+  //Explain 
 
   const CallLayout = () => {
     switch (layout) {
@@ -45,7 +47,6 @@ const MeetingRoom = () => {
         return <SpeakerLayout participantsBarPosition="right" />;
       case "speaker-left":
         return <SpeakerLayout participantsBarPosition="left" />;
-
       default:
         return <PaginatedGridLayout />;
     }
@@ -66,7 +67,7 @@ const MeetingRoom = () => {
         </div>
       </div>
       <div className="fixed bottom-4 md:bottom-0 lg:w-10/12 flex items-center justify-center gap-2 flex-wrap">
-        <CallControls onLeave={() => router.push("/")}/>
+        <CallControls onLeave={() => router.push("/")} />
 
         <DropdownMenu>
           <div className="flex items-center">
@@ -98,7 +99,7 @@ const MeetingRoom = () => {
           }}
         >
           <div className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]">
-            <User size={20} className="text-white"/>
+            <User size={20} className="text-white" />
           </div>
         </button>
         {!isPersonalRoom && <EndCallButton />}
